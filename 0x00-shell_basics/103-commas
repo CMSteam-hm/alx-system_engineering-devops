@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "./, ../, $(ls -A1 | sort -V | awk '{print ($0 ~ /\/$/) ? $0"/" : $0}' | paste -sd ", ")"
+echo "./, ../, $(ls -Ap | grep -v '^\.\.$' | sort -V | paste -sd ", ")"$'\n'
