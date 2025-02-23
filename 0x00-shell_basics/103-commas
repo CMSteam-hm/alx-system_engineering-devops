@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a --group-directories-first | LC_ALL=C sort -V | awk '{printf "%s%s", $0, (NR==NF ? "\n" : ", ")}'
+ls -A1 | sort -V | awk '{print ($0 ~ /\/$/) ? $0"/" : $0}' | paste -sd "," - && echo
