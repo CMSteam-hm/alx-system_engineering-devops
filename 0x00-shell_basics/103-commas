@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e "./,../,"$(ls -Ap | grep -vE '^\.\.?$' | sort -V | paste -sd ",")$'\n'
+ls -amvp
